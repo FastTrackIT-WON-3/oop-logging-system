@@ -1,7 +1,6 @@
 ﻿using OopLoggingSystem.Library;
 using OopLoggingSystem.Library.Factories;
-using OopLoggingSystem.Library.Loggers;
-using System;
+
 
 namespace OopLoggingSystem.Terminal
 {
@@ -10,7 +9,7 @@ namespace OopLoggingSystem.Terminal
         static void Main(string[] args)
         {
             // initializare logger
-            ApplicationLog.Initialize(new ConsoleLoggerFactory());
+            ApplicationLog.Initialize(new FileLoggerFactory(@"D:\Temp\ProblemWithLoggers\errorLog.txt"));
 
             int[] array = ArrayHelper.ReadFromConsole("Array");
             ArrayHelper.PrintToConsole("Array", array);
